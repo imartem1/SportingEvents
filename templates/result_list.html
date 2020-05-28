@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% block result_protocol_definition %}<u>Результаты</u>{% endblock %}
+{% block content %}
+{%for event, detail in events.items%}
+	<ul class ="list-group margin-list">
+		<li class="list-group-item">{{event}}</li>
+		{%for i in detail %}
+			{%for j in i %}
+				<li class="list-group-item"><a href="/result_list/round_results/{{j.event.id}}/{{j.round_number}}">Круг {{j.round_number}}</a><a href="/result_list/{{j.event.id}}/{{j.round_number}}/{{j.heat_number}}"> Забег {{j.heat_number}}</a></li>
+			{%endfor%}
+		{%endfor%}
+	</ul>
+{% endfor %}
+{%endblock%}
+	

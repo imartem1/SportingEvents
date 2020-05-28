@@ -1,0 +1,27 @@
+{% extends "final_protocol_list.html" %}
+{% block content %}
+<table class="table">
+	<tr>
+		<th>Место</th>
+		<th>ФИО</th>
+		<th> Круг 1</th>
+		<th> Круг 2</th>
+
+	</tr>
+	{%for runner, data in results.items%}
+		</tr>
+
+			{%if data.time != "Нет данных"%}
+				<td>{{forloop.counter}}</td>
+			{% else %}
+				<td></td>
+			{%endif%}
+			<td>{{runner.last_name}} {{runner.first_name}}</td>
+			{% for time in data %}
+				<td>{{time}}</td>
+			{% endfor %}
+
+		</tr>
+	{% endfor %}
+</table>
+{%endblock%}

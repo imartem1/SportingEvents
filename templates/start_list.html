@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+
+{% block start_protocol_definition %}<u>Стартовые протоколы</u>{% endblock %}
+{% block content %}
+{%for event, detail in events.items %}
+
+	<ul class="list-group margin-list">
+		<li class="list-group-item">{{event}}</li>
+		{%for i in detail %}
+			{%for j in i %}
+
+				<a href="/start_list/{{j.id}}">
+					<li class="list-group-item last-list-element-margin">
+							Круг {{j.round_number}} Забег {{j.heat_number}}
+
+					</li>
+				</a>
+			{%endfor%}
+		{%endfor%}
+	</ul>
+{% endfor %}
+
+{%endblock%}last-list-element-margin
+	

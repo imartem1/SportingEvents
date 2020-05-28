@@ -1,0 +1,20 @@
+{% extends "start_list.html" %}
+{% block content %}
+<table class="table">
+	<tr>
+		<th>Номер</th>
+		<th>Дорожка</th>
+		<th>ФИО</th>
+		<th>Организация</th>
+	</tr>
+	{%for data in start_protocol_data%}
+
+	<tr>
+		<td>{{data.edu_number}}</td>
+		<td>{{data.person_id}}</td>
+		<td>{{data.runner}}</td>
+		<td>{{data.edu_name}}</td>
+	</tr>
+	{%endfor%}
+</table>
+{%endblock%}

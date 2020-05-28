@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+
+{% block final_result_protocol_definition %}<u>Финальный протоколы</u>{% endblock %}
+{% block content %}
+{%for event in events %}
+
+	<ul class="list-group margin-list">
+		<li class="list-group-item">{{event.name}}</li>
+		<a href="/final_protocol/{{event.id}}">
+			<li class="list-group-item last-list-element-margin">
+				Протокол
+			</li>
+		</a>
+	</ul>
+{% endfor %}
+
+{%endblock%}last-list-element-margin
+	

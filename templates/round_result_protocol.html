@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+{% block result_protocol_definition %}<u>Результаты</u>{% endblock %}
+{% block content %}
+
+<table class="table margin-table">
+	<tr>
+		<th>Место</th>
+		<th>ФИО</th>
+		<th>Организация</th>
+		<th>Результат</th>
+	</tr>
+	{%for runner in results%}
+		</tr>
+			{%if runner.time != "Нет данных"%}
+				<td>{{forloop.counter}}</td>
+			{% else %}
+				<td></td>
+			{%endif%}
+			<td>{{runner.runner}}</td>
+			<td>{{runner.edu_name}}</td>
+			<td>{{runner.time}}</td>
+		</tr>
+	{% endfor %}
+
+{%endblock%}
